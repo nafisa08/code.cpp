@@ -1,5 +1,5 @@
 # code.cpp
-This is my practice codes.
+Here is my codeforces codes.
 <br>
 Author- Nsfisa Nowshad <br>
 #include<bits/stdc++.h> <br>
