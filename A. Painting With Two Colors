@@ -29,7 +29,6 @@ void solve()
     else
         no;
 }
-//Author:Mithila
 
 int main()
 {
