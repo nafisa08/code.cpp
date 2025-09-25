@@ -1,0 +1,58 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+#define vi vector<ll>
+#define endl '\n'
+#define yes cout << "YES" << endl
+#define no cout << "NO" << endl
+#ifdef LOCAL
+#include "algo/debug.h"
+#else
+#define debug(...) 42
+#endif
+const double PI = acos(-1);
+const ll MOD = 1e18;
+
+template <typename T>
+void readv(vector<T> &a, ll n)
+{
+    a.resize(n);
+    for (ll i = 0; i < n; i++)
+    {
+        cin >> a[i];
+    }
+}
+
+void solve()
+{
+    // cout << fixed << setprecision(2);
+
+    ll n, m, ok = 1;
+    cin >> n >> m;
+    vi a(m);
+    readv(a, m);
+    for (ll i = 0; i < m - 1; i++)
+    {
+        if (a[i + 1] != a[i] + 1)
+        {
+            ok = 0;
+            break;
+        }
+    }
+    if (ok) cout << n - a[m - 1] + 1 << endl;
+    else cout << 1 << endl;
+}
+
+int main()
+{
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    ll tstcs;
+    cin >> tstcs;
+    for (int t = 1; t <= tstcs; t++)
+    {
+        // cout << "Case " << t << ": ";
+        solve();
+    }
+    return 0;
+}
