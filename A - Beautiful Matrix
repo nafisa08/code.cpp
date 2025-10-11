@@ -1,0 +1,87 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+#define vi vector<ll>
+#define endl '\n'
+#define yes cout << "YES" << endl
+#define no cout << "NO" << endl
+#ifdef LOCAL
+#include "algo/debug.h"
+#else
+#define debug(...) 42
+#endif
+const double PI = acos(-1);
+const ll MOD = 1e18;
+
+void solve()
+{
+    // cout << fixed << setprecision(2);
+    ll a[5][5], col, row, r1, c1;
+    for (ll i = 0; i < 5; i++)
+    {
+        for (ll j = 0; j < 5; j++)
+        {
+            cin >> a[i][j];
+        }
+    }
+    // if(a[2][2] == 1){
+    //    cout >> 0;
+    // }
+    for (ll i = 0; i < 5; i++)
+    {
+        for (ll j = 0; j < 5; j++)
+        {
+            if (a[i][j] == 1)
+            {
+                // cout << i << " " << j;
+                row = i, col = j;
+            }
+        }
+    }
+
+    if (row == 0 || row == 4)
+    {
+        r1 = 2;
+    }
+
+    else if (row == 1 || row == 3)
+    {
+        r1 = 1;
+    }
+
+    if (col == 0 || col == 4)
+    {
+        c1 = 2;
+    }
+
+    else if (col == 1 || col == 3)
+    {
+        c1 = 1;
+    }
+
+    if (row == 2)
+    {
+        r1 = 0;
+    }
+
+    if (col == 2)
+    {
+        c1 = 0;
+    }
+    ll n = r1 + c1;
+    cout << n << endl;
+}
+
+int main()
+{
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    // ll tstcs;
+    // cin >> tstcs;
+    // for (int t = 1; t <= tstcs; t++)
+    {
+        // cout << "Case " << t << ": ";
+        solve();
+    }
+    return 0;
+}
