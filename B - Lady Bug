@@ -1,0 +1,55 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+#define vi vector<ll>
+#define endl '\n'
+#define yes cout << "YES" << endl
+#define no cout << "NO" << endl
+#ifdef LOCAL
+#include "algo/debug.h"
+#else
+#define debug(...) 42
+#endif
+const double PI = acos(-1);
+const ll MOD = 1e18;
+
+void solve()
+{
+    // cout << fixed << setprecision(2);
+    ll n, cnto = 0, cnte = 0, cntb = 0, cntbe = 0;
+    string a, b;
+    cin >> n >> a >> b;
+    for (ll i = 0; i < n; i++)
+    {
+        if (i % 2)
+        {
+            if (a[i] == '1')
+                cnto++;
+            if (b[i] == '0')
+                cntb++;
+        }
+        else
+        {
+            if (a[i] == '1')
+                cnte++;
+            if (b[i] == '0')
+                cntbe++;
+        }
+    }
+    if (cntbe >= cnto && cntb >= cnte) yes;
+    else no;
+}
+
+int main()
+{
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    ll tstcs;
+    cin >> tstcs;
+    for (int t = 1; t <= tstcs; t++)
+    {
+        // cout << "Case " << t << ": ";
+        solve();
+    }
+    return 0;
+}
