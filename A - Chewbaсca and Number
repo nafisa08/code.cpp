@@ -1,0 +1,49 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+#define vi vector<ll>
+#define endl '\n'
+#define yes cout << "YES" << endl
+#define no cout << "NO" << endl
+#ifdef LOCAL
+#include "algo/debug.h"
+#else
+#define debug(...) 42
+#endif
+const double PI = acos(-1);
+const ll MOD = 1e18;
+
+void solve()
+{
+    // cout << fixed << setprecision(2);
+    ll x,rem,d;
+    cin>>x;
+    vi a;
+    while(x!=0){
+        rem=x%10;
+        d=min(rem,(9-rem));
+        a.push_back(d);
+        x/=10;
+    }
+    ll n=a.size()-1;
+    if(a[n]==0) a[n]=9;
+    for(ll i=a.size()-1;i>=0;i--){
+        cout<<a[i];
+    }
+    cout<<endl;
+
+}
+
+int main()
+{
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    // ll tstcs;
+    // cin >> tstcs;
+    // for (int t = 1; t <= tstcs; t++)
+    {
+        // cout << "Case " << t << ": ";
+        solve();
+    }
+    return 0;
+}
